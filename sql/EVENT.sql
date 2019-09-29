@@ -25,3 +25,5 @@ CREATE TABLE POINT
   ID CHAR(8) NOT NULL 
 , POINT NUMBER(8) DEFAULT 0 NOT NULL 
 );
+
+select * from attend where to_char(attend_date, 'YYYYMMdd') = '20190909' and id = 'ji';
