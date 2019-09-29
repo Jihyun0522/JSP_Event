@@ -5,11 +5,18 @@
 </style>
 <%
 	request.setCharacterEncoding("UTF-8");
+	String name = (String)session.getAttribute("name");
 %>
 <ul class="top_ul">
 	<li class="toplogo"><a href="main.jsp">로고</a></li>
-	<li class="topli"><a href="*">1</a></li>
-	<li class="topli"><a href="*">2</a></li>
-	<li class="topli"><a href="*">3</a></li>
-	<!-- <li class="topli_right"><a href="*">LOGIN</a></li> -->
+	<li class="topli"><a href="attend.jsp">출석체크</a></li>
+	<%
+		if(name == null){
+	%>
+		<li class="topli_right"><a href="login.jsp">LOGIN</a></li>
+	<% } else {%>
+		<li class="topli_right"><a href="logout.jsp">LOGOUT</a></li>
+		<li class="topli_right"><a href="*">POINT</a></li>
+		<li class="topli_right" style="margin-top: 35px;"><%=name %>님</li>
+	<% } %>
 </ul>
