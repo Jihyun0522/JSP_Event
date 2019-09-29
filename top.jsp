@@ -8,7 +8,7 @@
 	String name = (String)session.getAttribute("name");
 %>
 <ul class="top_ul">
-	<li class="toplogo"><a href="main.jsp">로고</a></li>
+	<li class="toplogo"><a href="main.jsp">사이트</a></li>
 	<li class="topli"><a href="attend.jsp">출석체크</a></li>
 	<%
 		if(name == null){
@@ -17,6 +17,6 @@
 	<% } else {%>
 		<li class="topli_right"><a href="logout.jsp">LOGOUT</a></li>
 		<li class="topli_right"><a href="*">POINT</a></li>
-		<li class="topli_right" style="margin-top: 35px;"><%=name %>님</li>
+		<li class="topli_right" style="margin-top: 42px;"><%=name %>님</li>
 	<% } %>
 </ul>

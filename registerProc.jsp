@@ -31,6 +31,12 @@
 			pstmt.setString(2, passwd);
 			pstmt.setString(3, name);
 			su = pstmt.executeUpdate();
+			
+			sql = "insert into point values(?, ?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setInt(2, 0);
+			su = pstmt.executeUpdate();
 		}//rs == null
 	} catch(Exception e){
 		e.printStackTrace();

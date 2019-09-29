@@ -8,7 +8,9 @@
 <style>
 @font-face {
 	font-family: 'yg-jalnan';
-	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff')
+		format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -34,6 +36,7 @@ body {
 	background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
 	opacity: 0.6;
 	font-family: 'yg-jalnan';
+	color: white;
 }
 
 .sub {
@@ -47,17 +50,33 @@ body {
 
 hr {
 	width: 500px;
-	border: 3px soild white;
+	border: 3px soild blue;
+}
+
+.check:link, .check:visited {
+	border: 3px solid #f44336;
+	color: yellow;
+	padding: 14px 25px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.check:hover, .check:active {
+	background-color: red;
 }
 </style>
 </head>
 <body style="text-align: center;">
 	<div class="event">
 		<div class="sub" style="padding-top: 40px;">메일 출석하고 포인트받자!</div>
-		<div class="main">하루에 한 번<br>출석CHECK</div>
+		<div class="main">
+			하루에 한 번<br>출석CHECK
+		</div>
 		<hr>
 		<div class="sub">출석체크 할 때 마다 100P 적립!</div>
-		<hr>
+		<hr> <div style="padding-bottom:10px"></div>
+		<a href="attend.jsp" class="check">출석체크하기</a>
 	</div>
 </body>
 </html>
