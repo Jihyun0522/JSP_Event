@@ -14,9 +14,11 @@
 		if(name == null){
 	%>
 		<li class="topli_right"><a href="login.jsp">LOGIN</a></li>
-	<% } else {%>
+	<% } else {
+			name = name.trim();
+	%>
 		<li class="topli_right"><a href="logout.jsp">LOGOUT</a></li>
-		<li class="topli_right"><a href="*">POINT</a></li>
+		<li class="topli_right"><a href="point.jsp">POINT</a></li>
 		<li class="topli_right" style="margin-top: 42px;"><%=name %>님</li>
 	<% } %>
 </ul>

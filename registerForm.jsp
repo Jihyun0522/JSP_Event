@@ -139,7 +139,6 @@ form {
 				<input type="password" name="psw-repeat" placeholder="비밀번호를 다시 입력해주세요." id="pwd2" required>
 				<div class="alert alert-success" id="alert-success">비밀번호가 일치합니다.</div>
 				<div class="alert alert-danger" id="alert-danger">비밀번호가 일치하지 않습니다.</div>
-				<hr>
 				<button type="submit" class="registerbtn" id="submit">가입하기</button>
 			</div>
 	

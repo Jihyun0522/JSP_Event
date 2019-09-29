@@ -8,9 +8,7 @@
 <style>
 @font-face {
 	font-family: 'yg-jalnan';
-	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff')
-		format('woff');
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -19,8 +17,7 @@ body {
 	width: 100%;
 	text-align: center;
 	position: relative;
-	background:
-		url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=655&q=80')
+	background: url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=655&q=80')
 		center center/cover no-repeat;
 }
 

@@ -3,23 +3,58 @@
 <%@ page import="java.util.*"%>
 <%@page import="java.sql.*"%>
 <style>
-table, td, th {  
-  border: 1px solid #ddd;
+@font-face {
+	font-family: 'yg-jalnan';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	width: 100%;
+	text-align: center;
+	position: relative;
+	background: url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=655&q=80')
+		center center/cover no-repeat;
+}
+
+table, td, th {
+	border: 1px solid black;
 }
 
 table {
 	width: 80%;
-	height: 80%;
+	height: auto;
 	margin: auto;
 	border-collapse: collapse;
+	table-layout: fixed;
+	word-break: break-all;
 }
 
 th {
 	text-align: center;
+	background: #ddd;
 }
 
 td {
 	vertical-align: top;
+	height: 130px;
+}
+
+input[type=submit] {
+	width: 10%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #30cfd0;
+	font-family: yg-jalnan;
+}
+
+input[type=submit]:hover {
+	color: white;
+	background-color: #330867;
+	outline: none;
 }
 </style>
 <body style="text-align: center">
@@ -27,7 +62,8 @@ td {
 		request.setCharacterEncoding("UTF-8");
 		String name = (String)session.getAttribute("name");	
 		String id = (String)session.getAttribute("id");
-	
+		if(name != null) name = name.trim();
+		
 		Calendar cr = Calendar.getInstance();
 		int year = cr.get(Calendar.YEAR);
 		int month = cr.get(Calendar.MONTH);
@@ -56,8 +92,29 @@ td {
 		int startDay = cr.get(Calendar.DAY_OF_WEEK);
 		int count = 0;
 	%>
-	<h3><%=month+1%>월</h3>
+	<%
+		if(id != null) {
+	%>
+			<form action="attendProc.jsp" method="post">
+				<input type="hidden" name="today" value=<%=todayDB %>>
+				<input type="submit" value="출석CHECK">
+			</form>
+			<h3><%=name%>님의 <%=month+1%>월 출석 현황</h3>
+	<%  } else {
+			int m = month + 1;
+			out.println("<h3>" + m + "월</h3>");
+		}	
+	%>
 	<table>
+		<colgroup>
+			<col width="13%"/>
+			<col width="13%"/>
+			<col width="13%"/>
+			<col width="13%"/>
+			<col width="13%"/>
+			<col width="13%"/>
+			<col width="13%"/>
+		</colgroup>
 		<tr height="30">
 			<th><font size="2" color="red">일</font></th>
 			<th><font size="2">월</font></th>
@@ -118,13 +175,9 @@ td {
 							String sql = "select * from attend where id = '" + id + "' and to_char(ATTEND_DATE, 'YYYYMMdd') = '" + day + "'";
 							pstmt = conn.prepareStatement(sql);
 							rs = pstmt.executeQuery();
-							System.out.println("1");
 							if(rs.next()){
-								System.out.println("2");
-								out.println("dd");
-								System.out.println("출석");
+								out.println("<div style='text-align:center;'><img src='img/attend.png' height='100'/></div>");
 							}
-							System.out.println("3");
 							
 						} catch(Exception e){
 							e.printStackTrace();
