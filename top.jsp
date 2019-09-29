@@ -2,6 +2,16 @@
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="top.css"/>
 <style>
+@font-face {
+	font-family: 'HangeulNuri-Bold';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+ul {
+	font-family: 'HangeulNuri-Bold';
+}
 </style>
 <%
 	request.setCharacterEncoding("UTF-8");

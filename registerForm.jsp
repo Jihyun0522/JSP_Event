@@ -1,6 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <style>
+@font-face {
+	font-family: 'HangeulNuri-Bold';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*{
+	font-family: 'HangeulNuri-Bold';
+}
+
 body {
 	background:url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=655&q=80') center center/cover no-repeat;
 }
